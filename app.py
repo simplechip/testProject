@@ -42,7 +42,7 @@ st.dataframe(df.head(10))
 
 st_group = st.selectbox('NYC boroughs', df['neighbourhood_group'].unique())
 a = df[df['neighbourhood_group']==st_group]
-st_select_group = st.multiselect('select your neighbourhoods', a['neighbourhood'].unique())
+st_select_group = st.multiselect('select your neighbourhoods', a['neighbourhood'].unique(), default=a['neighbourhood'].unique()[0])
 b = df[df['neighbourhood'].isin(st_select_group)]
 st.dataframe(b.head())
 
